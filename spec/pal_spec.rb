@@ -20,26 +20,6 @@ describe Pal do
 		end
 	end
 
-	describe '#has_factors_in_range_and_given_length?' do
-
-		context 'Length = 3'
-			
-			it 'returns true for the largest value in range' do
-				test_val = 999 ** 2
-				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be true
-			end
-
-			it 'returns false for factors above range' do
-				test_val = 1000**2
-				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be false
-			end
-
-			it 'returns false for factors below range' do
-				test_val = 10**2
-				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be false
-			end
-	end
-
 	describe '#find_largest_palindrome' do
 
 		it 'returns 906609 for 3' do
@@ -49,11 +29,30 @@ describe Pal do
 		it 'returns 99000099 for 4' do
 			expect(Pal.find_largest_palindrome 4).to eq 99000099
 		end
-
 		
 		it 'returns 9966006699 for 5' do
 			expect(Pal.find_largest_palindrome 5).to eq 9966006699
-		end		
+		end
+
+		it 'returns 9966006699 for 6' do
+			expect(Pal.find_largest_palindrome 6).to eq 999000000999
+		end
+
+		it 'returns 9966006699 for 7' do
+			expect(Pal.find_largest_palindrome 7).to eq 99901611610999
+		end
+
+		it 'returns 9966006699 for 8' do
+			expect(Pal.find_largest_palindrome 8).to eq 9999000000009999
+		end
+
+		# it 'returns 9966006699 for 9' do
+		# 	expect(Pal.find_largest_palindrome 5).to eq 9966006699
+		# end
+
+		# it 'returns 9966006699 for 10' do
+		# 	expect(Pal.find_largest_palindrome 5).to eq 9966006699
+		# end
 
 
 
