@@ -6,4 +6,6 @@ puts "Enter the length of factors: "
 n = gets.chomp.to_i
 
 
-puts result = Pal.find_largest_palindrome n
+result = Pal.find_largest_palindrome n
+
+puts result.nil? ? 'Could not find a solution' : result
