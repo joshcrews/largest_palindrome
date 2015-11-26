@@ -20,23 +20,23 @@ describe Pal do
 		end
 	end
 
-	describe '#has_factors_in_range?' do
+	describe '#has_factors_in_range_and_given_length?' do
 
-		context 'range = (100..999)'
+		context 'Length = 3'
 			
 			it 'returns true for the largest value in range' do
 				test_val = 999 ** 2
-				expect(Pal.has_factors_in_range? test_val, 100, 999).to be true
+				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be true
 			end
 
 			it 'returns false for factors above range' do
 				test_val = 1000**2
-				expect(Pal.has_factors_in_range? test_val, 100, 999).to be false
+				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be false
 			end
 
 			it 'returns false for factors below range' do
 				test_val = 10**2
-				expect(Pal.has_factors_in_range? test_val, 100, 999).to be false
+				expect(Pal.has_factors_in_range_and_given_length? test_val, 999, 3).to be false
 			end
 	end
 
