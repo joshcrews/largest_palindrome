@@ -5,4 +5,5 @@ puts "the largest palindrome that has two factors of the input length."
 puts "Enter the length of factors: "
 n = gets.chomp.to_i
 
-puts Pal.find_largest_palindrome n
+
+puts result = Pal.find_largest_palindrome n

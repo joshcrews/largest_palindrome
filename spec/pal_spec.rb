@@ -20,38 +20,23 @@ describe Pal do
 		end
 	end
 
-	describe '#get_range_n_length_nums' do
-
-		it 'returns (100..999) for n of 3' do
-			expect(Pal.get_range_n_length_nums 3).to eq (100..999)
-		end
-
-		it 'returns (1..9) for n of 1' do
-			expect(Pal.get_range_n_length_nums 1).to eq (1..9)
-		end
-
-		it 'returns nil for n < 1' do
-			expect(Pal.get_range_n_length_nums 0).to be nil
-		end
-	end
-
 	describe '#has_factors_in_range?' do
 
 		context 'range = (100..999)'
 			
 			it 'returns true for the largest value in range' do
 				test_val = 999 ** 2
-				expect(Pal.has_factors_in_range? test_val, (100..999).to_a).to be true
+				expect(Pal.has_factors_in_range? test_val, 100, 999).to be true
 			end
 
 			it 'returns false for factors above range' do
 				test_val = 1000**2
-				expect(Pal.has_factors_in_range? test_val, (100..999).to_a).to be false
+				expect(Pal.has_factors_in_range? test_val, 100, 999).to be false
 			end
 
 			it 'returns false for factors below range' do
 				test_val = 10**2
-				expect(Pal.has_factors_in_range? test_val, (100..999).to_a).to be false
+				expect(Pal.has_factors_in_range? test_val, 100, 999).to be false
 			end
 	end
 
